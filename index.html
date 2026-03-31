@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AboutFishing Metrics Mail</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;-webkit-font-smoothing:antialiased}
+.tabs{display:flex;justify-content:center;gap:4px;padding:20px 0 0}
+.tab{padding:6px 20px;border:none;border-radius:4px 4px 0 0;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;background:#e5e5e5;color:#999;transition:.15s}
+.tab.on{background:#fff;color:#111;font-weight:600}
+.view{display:none}.view.on{display:block}
+</style>
+</head>
+<body>
+
+<div class="tabs">
+  <button class="tab on" onclick="sw(0)">Daily</button>
+  <button class="tab" onclick="sw(1)">Weekly</button>
+  <button class="tab" onclick="sw(2)">Monthly</button>
+</div>
+
+<!-- ════ DAILY ════ -->
+<div class="view on" id="v0">
+<table width="100%" cellpadding="0" cellspacing="0" style="padding:0 0 24px"><tr><td align="center">
+<table width="560" cellpadding="0" cellspacing="0" style="background:#fff">
+
+<tr><td style="padding:32px 32px 24px">
+  <table width="100%"><tr>
+    <td style="font-size:11px;font-weight:600;color:#111;letter-spacing:-.3px">AboutFishing</td>
+    <td align="right" style="font-size:11px;color:#aaa">3월 25일 화요일</td>
+  </tr></table>
+  <div style="border-bottom:1px solid #eee;margin-top:12px"></div>
+</td></tr>
+
+<tr><td style="padding:0 32px 20px">
+  <table width="100%" style="border-left:3px solid #dc2626;padding:10px 14px"><tr><td>
+    <span style="font-size:10px;font-weight:600;color:#dc2626;letter-spacing:.5px">ALERT</span><br>
+    <span style="font-size:11px;color:#7f1d1d;line-height:1.6">미확정 대기 6건 (24h+) · 일성호 반복 취소 3건</span>
+  </td></tr></table>
+</td></tr>
+
+<tr><td style="padding:0 32px"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">예약</span></td></tr>
+<tr><td style="padding:10px 32px 0">
+  <table width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td width="50%" valign="top" style="padding-right:12px">
+      <span style="font-size:10px;color:#aaa">확정 GMV</span><br>
+      <span style="font-size:32px;font-weight:700;color:#111;letter-spacing:-1.5px;line-height:1.2">289만</span><br>
+      <span style="font-size:10px;color:#16a34a">↑ 18.2%<span style="color:#ccc"> vs 전주 화</span></span>
+    </td>
+    <td width="50%" valign="top" style="padding-left:12px;border-left:1px solid #f0f0f0">
+      <table width="100%" style="font-size:11px;line-height:2">
+        <tr><td style="color:#999">확정</td><td align="right" style="font-weight:600;color:#111">17건</td></tr>
+        <tr><td style="color:#999">신청</td><td align="right" style="color:#555">24건</td></tr>
+        <tr><td style="color:#999">전환율</td><td align="right" style="font-weight:600;color:#2563EB">71%</td></tr>
+        <tr><td style="color:#999">미확정</td><td align="right" style="color:#dc2626;font-weight:600">6건</td></tr>
+      </table>
+    </td>
+  </tr></table>
+</td></tr>
+<tr><td style="padding:12px 32px 0">
+  <table width="100%"><tr>
+    <td style="font-size:9px;color:#aaa">당월 누적</td>
+    <td align="right" style="font-size:9px;color:#888">5,562만 / 1.75억</td>
+  </tr></table>
+  <div style="background:#f0f0f0;height:3px;border-radius:2px;margin-top:4px"><div style="background:#111;height:3px;border-radius:2px;width:31.8%"></div></div>
+</td></tr>
+<tr><td style="padding:20px 32px 0"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
+
+<tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">커머스</span></td></tr>
+<tr><td style="padding:10px 32px 0">
+  <table width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td width="50%" valign="top" style="padding-right:12px">
+      <span style="font-size:10px;color:#aaa">자사몰 매출</span><br>
+      <span style="font-size:28px;font-weight:700;color:#111;letter-spacing:-1px;line-height:1.2">324만</span>
+    </td>
+    <td width="50%" valign="top" style="padding-left:12px;border-left:1px solid #f0f0f0">
+      <table width="100%" style="font-size:11px;line-height:2">
+        <tr><td style="color:#999">주문</td><td align="right" style="font-weight:600;color:#111">4건</td></tr>
+        <tr><td style="color:#999">당주 누적</td><td align="right" style="color:#555">918만</td></tr>
+        <tr><td style="color:#999">당월 누적</td><td align="right" style="color:#555">2,821만</td></tr>
+      </table>
+    </td>
+  </tr></table>
+</td></tr>
+<tr><td style="padding:20px 32px 0"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
+
+<tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">사용자</span></td></tr>
+<tr><td style="padding:10px 32px">
+  <table width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td width="33%" valign="top">
+      <span style="font-size:9px;color:#aaa">가입</span><br>
+      <span style="font-size:22px;font-weight:700;color:#111">68</span><br>
+      <span style="font-size:9px;color:#999">AOS 52 · iOS 16</span>
+    </td>
+    <td width="33%" valign="top" style="border-left:1px solid #f0f0f0;padding-left:16px">
+      <span style="font-size:9px;color:#aaa">탈퇴</span><br>
+      <span style="font-size:22px;font-weight:700;color:#111">41</span><br>
+      <span style="font-size:9px;color:#999">당일 28 · 기존 13</span>
+    </td>
+    <td width="33%" valign="top" style="border-left:1px solid #f0f0f0;padding-left:16px">
+      <span style="font-size:9px;color:#aaa">순증감</span><br>
+      <span style="font-size:22px;font-weight:700;color:#16a34a">+27</span><br>
+      <span style="font-size:9px;color:#999">당일탈퇴율 41%</span>
+    </td>
+  </tr></table>
+</td></tr>
+
+<tr><td style="padding:20px 32px;border-top:1px solid #f0f0f0">
+  <table width="100%"><tr>
+    <td><a href="#" style="font-size:10px;color:#2563EB;text-decoration:none">대시보드 →</a></td>
+    <td align="right" style="font-size:9px;color:#ccc">08:00 KST · AboutFishing</td>
+  </tr></table>
+</td></tr>
+
+</table></td></tr></table>
+</div>
+
+<!-- ════ WEEKLY ════ -->
+<div class="view" id="v1">
+<table width="100%" cellpadding="0" cellspacing="0" style="padding:0 0 24px"><tr><td align="center">
+<table width="560" cellpadding="0" cellspacing="0" style="background:#fff">
+
+<tr><td style="padding:32px 32px 24px">
+  <table width="100%"><tr>
+    <td style="font-size:11px;font-weight:600;color:#111">AboutFishing<span style="color:#ccc;font-weight:400"> · Weekly</span></td>
+    <td align="right" style="font-size:11px;color:#aaa">W12 · 3/17 ~ 3/22</td>
+  </tr></table>
+  <div style="border-bottom:1px solid #eee;margin-top:12px"></div>
+</td></tr>
+
+<tr><td style="padding:0 32px"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">성장 핵심</span></td></tr>
+<tr><td style="padding:10px 32px 20px">
+  <table width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td width="33%" valign="top">
+      <span style="font-size:9px;color:#aaa">확정 GMV</span><br>
+      <span style="font-size:24px;font-weight:700;color:#111;letter-spacing:-1px">1,644만</span><br>
+      <span style="font-size:10px;color:#16a34a;font-weight:600">↑ 62.1%</span>
+    </td>
+    <td width="33%" valign="top" style="border-left:1px solid #f0f0f0;padding-left:16px">
+      <span style="font-size:9px;color:#aaa">자사몰 매출</span><br>
+      <span style="font-size:24px;font-weight:700;color:#111;letter-spacing:-1px">411만</span><br>
+      <span style="font-size:10px;color:#dc2626;font-weight:600">↓ 73.1%</span>
+    </td>
+    <td width="33%" valign="top" style="border-left:1px solid #f0f0f0;padding-left:16px">
+      <span style="font-size:9px;color:#aaa">Net Revenue</span><br>
+      <span style="font-size:24px;font-weight:700;color:#2563EB;letter-spacing:-1px">460만</span><br>
+      <span style="font-size:10px;color:#999">매출+수수료</span>
+    </td>
+  </tr></table>
+</td></tr>
+<tr><td style="padding:0 32px"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
+
+<tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">예약</span></td></tr>
+<tr><td style="padding:8px 32px 16px">
+  <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px">
+    <tr style="line-height:2.4"><td style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0"></td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">당주</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">전주</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">WoW</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">확정건수</td><td align="right">87</td><td align="right" style="color:#999">63</td><td align="right" style="color:#16a34a;font-weight:600">+38%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">신청건수</td><td align="right">175</td><td align="right" style="color:#999">125</td><td align="right" style="color:#16a34a;font-weight:600">+40%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">전환율</td><td align="right">65.0%</td><td align="right" style="color:#999">57.1%</td><td align="right" style="color:#16a34a;font-weight:600">+7.9p</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">평균 응답</td><td align="right">1h 38m</td><td align="right" style="color:#999">2h 12m</td><td align="right" style="color:#16a34a">개선</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">취소 (업체/고객)</td><td align="right">8 / 4</td><td align="right" style="color:#999">6 / 3</td><td align="right" style="color:#999">—</td></tr>
+  </table>
+</td></tr>
+<tr><td style="padding:0 32px"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
+
+<tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">커머스</span></td></tr>
+<tr><td style="padding:8px 32px 16px">
+  <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px">
+    <tr style="line-height:2.4"><td style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0"></td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">당주</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">전주</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">WoW</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">주문건수</td><td align="right">8</td><td align="right" style="color:#999">14</td><td align="right" style="color:#dc2626;font-weight:600">-43%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">AOV</td><td align="right">51,375원</td><td align="right" style="color:#999">109,143원</td><td align="right" style="color:#dc2626;font-weight:600">-53%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">ARPPU</td><td align="right">68,500원</td><td align="right" style="color:#999">127,333원</td><td align="right" style="color:#dc2626;font-weight:600">-46%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">머니 사용</td><td align="right">12.8만</td><td align="right" style="color:#999">9.2만</td><td align="right" style="color:#16a34a">+39%</td></tr>
+  </table>
+</td></tr>
+<tr><td style="padding:0 32px"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
+
+<tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">마켓플레이스</span></td></tr>
+<tr><td style="padding:8px 32px 16px">
+  <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px;line-height:2.4">
+    <tr><td style="color:#333;font-weight:500">등록 선박</td><td align="right" style="color:#333">202척</td><td style="color:#333;font-weight:500;padding-left:20px">활성 비율</td><td align="right" style="color:#333">18.8%</td></tr>
+    <tr><td style="color:#333;font-weight:500">인기 어종</td><td colspan="3" align="right" style="color:#999;font-size:10px">광어 · 우럭 · 주꾸미 · 갑오징어 · 볼락</td></tr>
+  </table>
+</td></tr>
+<tr><td style="padding:0 32px"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
+
+<tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">사용자</span></td></tr>
+<tr><td style="padding:8px 32px 20px">
+  <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px">
+    <tr style="line-height:2.4"><td style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0"></td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">당주</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">전주</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">WoW</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">가입 (AOS/iOS)</td><td align="right">448 (344/104)</td><td align="right" style="color:#999">333</td><td align="right" style="color:#16a34a;font-weight:600">+35%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">탈퇴 (기존/당일)</td><td align="right">312 (184/128)</td><td align="right" style="color:#999">298</td><td align="right" style="color:#dc2626">+5%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">순증감</td><td align="right" style="color:#16a34a;font-weight:600">+136</td><td align="right" style="color:#999">+35</td><td align="right" style="color:#999">—</td></tr>
+  </table>
+</td></tr>
+
+<tr><td style="padding:20px 32px;border-top:1px solid #f0f0f0">
+  <table width="100%"><tr>
+    <td><a href="#" style="font-size:10px;color:#2563EB;text-decoration:none">대시보드 →</a></td>
+    <td align="right" style="font-size:9px;color:#ccc">W12 · AboutFishing</td>
+  </tr></table>
+</td></tr>
+
+</table></td></tr></table>
+</div>
+
+<!-- ════ MONTHLY ════ -->
+<div class="view" id="v2">
+<table width="100%" cellpadding="0" cellspacing="0" style="padding:0 0 24px"><tr><td align="center">
+<table width="560" cellpadding="0" cellspacing="0" style="background:#fff">
+
+<tr><td style="padding:32px 32px 24px">
+  <table width="100%"><tr>
+    <td style="font-size:11px;font-weight:600;color:#111">AboutFishing<span style="color:#ccc;font-weight:400"> · Monthly</span></td>
+    <td align="right" style="font-size:11px;color:#aaa">2026년 2월</td>
+  </tr></table>
+  <div style="border-bottom:1px solid #eee;margin-top:12px"></div>
+</td></tr>
+
+<tr><td style="padding:0 32px"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">IR 핵심</span></td></tr>
+<tr><td style="padding:10px 32px 4px">
+  <table width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td width="33%" valign="top">
+      <span style="font-size:9px;color:#aaa">MAU</span><br>
+      <span style="font-size:22px;font-weight:700;color:#111;letter-spacing:-1px">28,662</span><br>
+      <span style="font-size:10px;color:#dc2626">↓ 3.2%</span>
+    </td>
+    <td width="33%" valign="top" style="border-left:1px solid #f0f0f0;padding-left:16px">
+      <span style="font-size:9px;color:#aaa">GMV</span><br>
+      <span style="font-size:22px;font-weight:700;color:#111;letter-spacing:-1px">3,200만</span><br>
+      <span style="font-size:10px;color:#16a34a">↑ 78%</span>
+    </td>
+    <td width="33%" valign="top" style="border-left:1px solid #f0f0f0;padding-left:16px">
+      <span style="font-size:9px;color:#aaa">Net Revenue</span><br>
+      <span style="font-size:22px;font-weight:700;color:#2563EB;letter-spacing:-1px">2,917만</span><br>
+      <span style="font-size:10px;color:#16a34a">↑ 94%</span>
+    </td>
+  </tr></table>
+</td></tr>
+<tr><td style="padding:4px 32px 20px">
+  <table width="100%" cellpadding="0" cellspacing="0"><tr>
+    <td width="33%" valign="top">
+      <span style="font-size:9px;color:#aaa">Take Rate</span><br>
+      <span style="font-size:18px;font-weight:700;color:#111">3.0%</span>
+    </td>
+    <td width="33%" valign="top" style="border-left:1px solid #f0f0f0;padding-left:16px">
+      <span style="font-size:9px;color:#aaa">LTV / CAC</span><br>
+      <span style="font-size:18px;font-weight:700;color:#111">5.6x</span>
+    </td>
+    <td width="33%" valign="top" style="border-left:1px solid #f0f0f0;padding-left:16px">
+      <span style="font-size:9px;color:#aaa">Stickiness</span><br>
+      <span style="font-size:18px;font-weight:700;color:#111">16.5%</span>
+    </td>
+  </tr></table>
+</td></tr>
+<tr><td style="padding:0 32px"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
+
+<tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">매출 · GMV</span></td></tr>
+<tr><td style="padding:8px 32px 16px">
+  <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px">
+    <tr style="line-height:2.4"><td style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0"></td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">2월</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">1월</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">MoM</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">확정 GMV</td><td align="right">3,200만</td><td align="right" style="color:#999">1,800만</td><td align="right" style="color:#16a34a;font-weight:600">+78%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">자사몰 매출</td><td align="right">2,821만</td><td align="right" style="color:#999">1,453만</td><td align="right" style="color:#16a34a;font-weight:600">+94%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">수수료 수익</td><td align="right">96만</td><td align="right" style="color:#999">54만</td><td align="right" style="color:#16a34a;font-weight:600">+78%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">ARPPU</td><td align="right">101,668원</td><td align="right" style="color:#999">88,223원</td><td align="right" style="color:#16a34a">+15%</td></tr>
+  </table>
+</td></tr>
+<tr><td style="padding:0 32px"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
+
+<tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">리텐션</span></td></tr>
+<tr><td style="padding:8px 32px 16px">
+  <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px">
+    <tr style="line-height:2.4"><td style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0"></td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">2월</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">1월</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">목표</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">D1</td><td align="right">34%</td><td align="right" style="color:#999">32%</td><td align="right" style="color:#ccc">35%+</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">D7</td><td align="right">20%</td><td align="right" style="color:#999">18%</td><td align="right" style="color:#ccc">20%+</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">D30</td><td align="right">13%</td><td align="right" style="color:#999">11%</td><td align="right" style="color:#ccc">15%+</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">재구매율</td><td align="right">28.6%</td><td align="right" style="color:#999">24.2%</td><td align="right" style="color:#ccc">30%+</td></tr>
+  </table>
+</td></tr>
+<tr><td style="padding:0 32px"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
+
+<tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">사용자 · 탈퇴</span></td></tr>
+<tr><td style="padding:8px 32px 6px">
+  <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px">
+    <tr style="line-height:2.4"><td style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0"></td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">2월</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">1월</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">MoM</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">가입</td><td align="right">1,514</td><td align="right" style="color:#999">2,142</td><td align="right" style="color:#dc2626">-29%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">탈퇴</td><td align="right">3,800</td><td align="right" style="color:#999">4,099</td><td align="right" style="color:#16a34a">-7%</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">당일탈퇴율</td><td align="right">57.2%</td><td align="right" style="color:#999">59.9%</td><td align="right" style="color:#16a34a">개선</td></tr>
+    <tr style="line-height:2.4"><td style="color:#333;font-weight:500">순증감</td><td align="right" style="color:#dc2626;font-weight:600">-2,286</td><td align="right" style="color:#dc2626">-1,957</td><td align="right" style="color:#999">—</td></tr>
+  </table>
+</td></tr>
+<tr><td style="padding:0 32px 14px">
+  <span style="font-size:9px;color:#999">탈퇴 사유 TOP 3 : </span><span style="font-size:9px;color:#666">원하는 정보 없음 14.2% · 이용불편 12.6% · 낚시 그만둠 9.2%</span>
+</td></tr>
+<tr><td style="padding:0 32px"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
+
+<tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">SUPPLY · DEMAND</span></td></tr>
+<tr><td style="padding:8px 32px 20px">
+  <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px;line-height:2.4">
+    <tr><td style="color:#333;font-weight:500">등록 선박</td><td align="right" style="color:#333">202척<span style="color:#16a34a;font-size:9px"> +4</span></td></tr>
+    <tr><td style="color:#333;font-weight:500">선박 가동률</td><td align="right" style="color:#333">18.8%</td></tr>
+    <tr><td style="color:#333;font-weight:500">Demand Density</td><td align="right" style="color:#333">1.7건/척</td></tr>
+  </table>
+</td></tr>
+
+<tr><td style="padding:20px 32px;border-top:1px solid #f0f0f0">
+  <table width="100%"><tr>
+    <td><a href="#" style="font-size:10px;color:#2563EB;text-decoration:none">대시보드 →</a></td>
+    <td align="right" style="font-size:9px;color:#ccc">2월 리포트 · AboutFishing</td>
+  </tr></table>
+</td></tr>
+
+</table></td></tr></table>
+</div>
+
+<script>
+function sw(n){
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('on',i===n));
+  document.querySelectorAll('.view').forEach((v,i)=>v.classList.toggle('on',i===n));
+}
+</script>
+</body></html>
