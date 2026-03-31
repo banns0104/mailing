@@ -6,30 +6,22 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
 .tabs{display:flex;justify-content:center;gap:4px;padding:16px 0 14px;position:sticky;top:0;z-index:10;background:#f2f2f2;border-bottom:1px solid #e5e5e5}
 .tab{padding:7px 24px;border:none;border-radius:4px 4px 0 0;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;background:#e5e5e5;color:#999;transition:.15s}
 .tab.on{background:#fff;color:#111;font-weight:600}
-.wrap{display:flex;gap:0;max-width:1200px;margin:0 auto;align-items:flex-start}
-.left{width:560px;flex-shrink:0}
-.right{flex:1;min-width:0;padding:0 20px 24px 20px;position:sticky;top:0;max-height:100vh;overflow-y:auto}
-.view{display:none}
-.view.on{display:block;margin-top:16px}
-
-/* Spec table */
+.view{display:none}.view.on{display:block;margin-top:16px}
+.wrap{display:flex;gap:0;max-width:1280px;margin:0 auto;align-items:flex-start}
+.left{width:540px;flex-shrink:0}
+.right{flex:1;min-width:0;padding:0 16px 24px 16px;position:sticky;top:56px;max-height:calc(100vh - 56px);overflow-y:auto}
 .sec-label{font-size:12px;font-weight:600;color:#1B3A5C;letter-spacing:1px;padding:18px 0 10px;border-bottom:2px solid #1B3A5C;margin-bottom:0}
-.spec{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px}
-.spec th{padding:8px 10px;text-align:left;font-size:11px;color:#999;font-weight:500;border-bottom:1px solid #e5e5e5;white-space:nowrap}
-.spec td{padding:8px 10px;border-bottom:1px solid #f0f0f0;vertical-align:top;line-height:1.6}
-.spec td:first-child{font-weight:600;color:#111;white-space:nowrap;width:120px}
+.spec{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;table-layout:fixed}
+.spec th{padding:8px 8px;text-align:left;font-size:11px;color:#999;font-weight:500;border-bottom:1px solid #e5e5e5;white-space:nowrap;overflow:hidden}
+.spec td{padding:8px 8px;border-bottom:1px solid #f0f0f0;vertical-align:middle;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spec td:first-child{font-weight:600;color:#111}
 .spec td:nth-child(2){color:#555;font-size:12px}
-.src{display:inline-block;padding:2px 6px;border-radius:3px;font-size:9px;font-weight:600;margin-right:3px}
-.src-db{background:#FFF3E0;color:#E65100}
-.src-api{background:#E8F5E9;color:#2E7D32}
-.src-calc{background:#EFF6FF;color:#2563EB}
-.src-log{background:#F3E5F5;color:#7B1FA2}
-
-@media(max-width:960px){
-.wrap{flex-direction:column;align-items:center}
-.left{width:100%;max-width:580px}
-.right{width:100%;max-width:580px;position:static;max-height:none;padding:0 12px 24px}
-}
+.spec .c-name{width:100px}.spec .c-formula{width:auto}.spec .c-src{width:90px}.spec .c-chk{width:50px;text-align:center}
+.src{display:inline-block;padding:2px 6px;border-radius:3px;font-size:9px;font-weight:600;margin-right:2px;vertical-align:middle}
+.src-db{background:#FFF3E0;color:#E65100}.src-api{background:#E8F5E9;color:#2E7D32}.src-calc{background:#EFF6FF;color:#2563EB}.src-ga{background:#F3E5F5;color:#7B1FA2}
+.chk{width:18px;height:18px;cursor:pointer;accent-color:#2563EB}
+.chk-label{font-size:10px;display:block;text-align:center;margin-top:1px}
+@media(max-width:960px){.wrap{flex-direction:column;align-items:center}.left{width:100%;max-width:560px}.right{width:100%;max-width:660px;position:static;max-height:none;padding:0 8px 24px}}
 </style>
 </head>
 <body>
@@ -40,9 +32,8 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
   <button class="tab" onclick="sw(2)">Monthly</button>
 </div>
 
-<!-- ════════ DAILY ════════ -->
+<!-- ════ DAILY ════ -->
 <div class="view on" id="v0"><div class="wrap">
-<!-- LEFT: Email -->
 <div class="left">
 <table width="100%" cellpadding="0" cellspacing="0" style="padding:0 0 24px"><tr><td>
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#fff">
@@ -63,8 +54,16 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
 <td width="50%" valign="top" style="padding-right:12px"><span style="font-size:10px;color:#aaa">자사몰 매출</span><br><span style="font-size:28px;font-weight:700;color:#111;letter-spacing:-1px;line-height:1.2">324만</span></td>
 <td width="50%" valign="top" style="padding-left:12px;border-left:1px solid #f0f0f0"><table width="100%" style="font-size:11px;line-height:2.2"><tr><td style="color:#999">주문</td><td align="right" style="font-weight:600;color:#111">4건</td></tr><tr><td style="color:#999">AOV</td><td align="right" style="color:#555">81,000원</td></tr><tr><td style="color:#999">구매자</td><td align="right" style="color:#555">3명</td></tr></table></td>
 </tr></table></td></tr>
-<tr><td style="padding:6px 32px 0"><table width="100%" style="font-size:11px;line-height:2.2"><tr><td style="color:#999">머니 사용</td><td align="right" style="color:#555">18,200원</td></tr><tr><td style="color:#999">당주 누적</td><td align="right" style="color:#555">918만</td></tr><tr><td style="color:#999">당월 누적</td><td align="right" style="color:#555">2,821만</td></tr></table></td></tr>
+<tr><td style="padding:6px 32px 0"><table width="100%" style="font-size:11px;line-height:2.2"><tr><td style="color:#999">당주 누적</td><td align="right" style="color:#555">918만</td></tr><tr><td style="color:#999">당월 누적</td><td align="right" style="color:#555">2,821만</td></tr></table></td></tr>
 <tr><td style="padding:16px 32px 0"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
+
+<tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">머니</span></td></tr>
+<tr><td style="padding:10px 32px"><table width="100%"><tr>
+<td width="33%" valign="top"><span style="font-size:9px;color:#aaa">충전 (유료)</span><br><span style="font-size:20px;font-weight:700;color:#111">42만</span></td>
+<td width="33%" valign="top" style="border-left:1px solid #f0f0f0;padding-left:16px"><span style="font-size:9px;color:#aaa">충전 (무료)</span><br><span style="font-size:20px;font-weight:700;color:#111">8.5만</span></td>
+<td width="33%" valign="top" style="border-left:1px solid #f0f0f0;padding-left:16px"><span style="font-size:9px;color:#aaa">사용</span><br><span style="font-size:20px;font-weight:700;color:#111">18.2만</span></td>
+</tr></table></td></tr>
+<tr><td style="padding:8px 32px 0"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
 
 <tr><td style="padding:20px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">사용자</span></td></tr>
 <tr><td style="padding:10px 32px"><table width="100%"><tr>
@@ -99,77 +98,10 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
 </table></td></tr></table>
 </div>
 
-<!-- RIGHT: Spec -->
-<div class="right">
-<div class="sec-label">이상징후 ALERT</div>
-<table class="spec"><tr><th>조건</th><th>기준</th><th>소스</th></tr>
-<tr><td>전환율 급락</td><td>확정GMV ÷ 신청GMV &lt; 40%</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>미확정 과다</td><td>24시간+ 미확정 5건 이상</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>탈퇴 급증</td><td>전일 탈퇴 &gt; 7일 평균 × 2</td><td><span class="src src-db">DB</span>회원</td></tr>
-<tr><td>당일탈퇴 &gt; 가입</td><td>당일탈퇴수 &gt; 가입수</td><td><span class="src src-db">DB</span>회원</td></tr>
-<tr><td>자사몰 매출 0</td><td>전일 결제 합산 = 0원</td><td><span class="src src-api">API</span>샵바이</td></tr>
-<tr><td>반복 취소 선박</td><td>7일 내 동일 선박 3건+ 취소</td><td><span class="src src-db">DB</span>예약</td></tr>
-</table>
-
-<div class="sec-label">예약</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>확정 GMV</td><td>SUM(amount) WHERE status = 'confirmed' AND DATE(confirmed_at) = 전일</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>확정건수</td><td>COUNT(*) WHERE status = 'confirmed' AND DATE(confirmed_at) = 전일</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>신청건수</td><td>COUNT(*) WHERE DATE(created_at) = 전일 (applied + confirmed + cancelled 포함)</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>전환율</td><td>확정 GMV ÷ 신청 GMV × 100</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>미확정 대기</td><td>COUNT(*) WHERE status = 'applied' (전체 잔존)</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>취소 (업체/고객)</td><td>COUNT(*) GROUP BY cancel_type ('operator' / 'customer')</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>건당 결제액</td><td>확정 GMV ÷ 확정건수</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>평균 응답시간</td><td>AVG(confirmed_at - created_at) WHERE 전일 확정</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>수수료 수익</td><td>확정 GMV × 3%</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>당월 누적 GMV</td><td>SUM(amount) WHERE status = 'confirmed' AND 당월</td><td><span class="src src-db">DB</span>예약</td></tr>
-</table>
-
-<div class="sec-label">커머스</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>자사몰 매출</td><td>GET /orders?status=paid&date=전일 → SUM(total_price)</td><td><span class="src src-api">API</span>샵바이</td></tr>
-<tr><td>주문건수</td><td>GET /orders?status=paid&date=전일 → COUNT</td><td><span class="src src-api">API</span>샵바이</td></tr>
-<tr><td>AOV</td><td>자사몰 매출 ÷ 주문건수</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>구매자 수</td><td>DISTINCT(buyer_id) WHERE 전일 결제</td><td><span class="src src-api">API</span>샵바이</td></tr>
-<tr><td>머니 사용</td><td>SUM(money_used) WHERE 전일</td><td><span class="src src-db">DB</span>결제</td></tr>
-<tr><td>당주 누적</td><td>SUM(매출) WHERE 해당주 월~전일</td><td><span class="src src-api">API</span>샵바이</td></tr>
-<tr><td>당월 누적</td><td>SUM(매출) WHERE 당월 1일~전일</td><td><span class="src src-api">API</span>샵바이</td></tr>
-</table>
-
-<div class="sec-label">사용자</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>가입 (AOS/iOS)</td><td>COUNT(*) WHERE DATE(created_at) = 전일, GROUP BY platform</td><td><span class="src src-db">DB</span>회원</td></tr>
-<tr><td>탈퇴 (기존/당일)</td><td>COUNT(*) WHERE DATE(deleted_at) = 전일. 당일 = created_at 날짜 = deleted_at 날짜</td><td><span class="src src-db">DB</span>회원</td></tr>
-<tr><td>순증감</td><td>가입 - 탈퇴</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>당일탈퇴율</td><td>당일탈퇴 ÷ 전일 가입 × 100</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>누적 회원</td><td>COUNT(*) WHERE deleted_at IS NULL (전일까지)</td><td><span class="src src-db">DB</span>회원</td></tr>
-<tr><td>설치 가입률</td><td>가입완료 ÷ first_open (플랫폼별)</td><td><span class="src src-db">DB</span>회원+앱로그</td></tr>
-</table>
-
-<div class="sec-label">커뮤니티</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>조회수</td><td>커뮤니티 탭 PV (전일)</td><td><span class="src src-db">DB</span>체류시간 시트</td></tr>
-<tr><td>활성사용자</td><td>커뮤니티 탭 참여 유저 수 (전일)</td><td><span class="src src-db">DB</span>체류시간 시트</td></tr>
-<tr><td>체류시간</td><td>커뮤니티 탭 AVG(session_duration) (전일)</td><td><span class="src src-db">DB</span>체류시간 시트</td></tr>
-<tr><td>게시글</td><td>COUNT(*) WHERE type IN ('기록','자유글') AND DATE(created_at) = 전일</td><td><span class="src src-db">DB</span>게시글</td></tr>
-</table>
-
-<div class="sec-label">포인트맵</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>지도 조회</td><td>map.aboutfishing.kr 페이지뷰 (전일)</td><td><span class="src src-api">GA</span>포인트맵 GA4</td></tr>
-<tr><td>포인트 상세</td><td>포인트 상세 페이지 진입 수 (전일)</td><td><span class="src src-api">GA</span>포인트맵 GA4</td></tr>
-<tr><td>상세 전환율</td><td>포인트 상세 ÷ 지도 조회 × 100</td><td><span class="src src-calc">계산</span>GA4 기반</td></tr>
-</table>
-
-<div class="sec-label">SUPPLY</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>등록 선박</td><td>COUNT(*) WHERE status = 'active'</td><td><span class="src src-db">DB</span>선박</td></tr>
-<tr><td>전일 신규 등록</td><td>COUNT(*) WHERE DATE(created_at) = 전일 AND status = 'active'</td><td><span class="src src-db">DB</span>선박</td></tr>
-</table>
-</div>
+<div class="right" id="spec-daily"></div>
 </div></div>
 
-<!-- ════════ WEEKLY ════════ -->
+<!-- ════ WEEKLY ════ -->
 <div class="view" id="v1"><div class="wrap">
 <div class="left">
 <table width="100%" cellpadding="0" cellspacing="0" style="padding:0 0 24px"><tr><td>
@@ -184,7 +116,7 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
 </tr></table></td></tr>
 <tr><td style="padding:0 32px"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
 
-<tr><td style="padding:16px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">예약 · 커머스 · 마켓플레이스 · 사용자</span></td></tr>
+<tr><td style="padding:16px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">전체 지표 (WoW)</span></td></tr>
 <tr><td style="padding:8px 32px 16px"><table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px">
 <tr style="line-height:2.4"><td style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0"></td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">당주</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">전주</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">WoW</td></tr>
 <tr style="line-height:2.4;background:#fafafa"><td colspan="4" style="color:#aaa;font-size:9px;font-weight:600;letter-spacing:.5px;padding-top:4px">예약</td></tr>
@@ -196,6 +128,10 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
 <tr style="line-height:2.4"><td style="color:#333;font-weight:500">주문건수</td><td align="right">8</td><td align="right" style="color:#999">14</td><td align="right" style="color:#dc2626;font-weight:600">-43%</td></tr>
 <tr style="line-height:2.4"><td style="color:#333;font-weight:500">AOV</td><td align="right">51,375원</td><td align="right" style="color:#999">109,143원</td><td align="right" style="color:#dc2626;font-weight:600">-53%</td></tr>
 <tr style="line-height:2.4"><td style="color:#333;font-weight:500">ARPPU</td><td align="right">68,500원</td><td align="right" style="color:#999">127,333원</td><td align="right" style="color:#dc2626;font-weight:600">-46%</td></tr>
+<tr style="line-height:2.4;background:#fafafa"><td colspan="4" style="color:#aaa;font-size:9px;font-weight:600;letter-spacing:.5px;padding-top:4px">머니</td></tr>
+<tr style="line-height:2.4"><td style="color:#333;font-weight:500">충전 (유료)</td><td align="right">320만</td><td align="right" style="color:#999">280만</td><td align="right" style="color:#16a34a">+14%</td></tr>
+<tr style="line-height:2.4"><td style="color:#333;font-weight:500">충전 (무료)</td><td align="right">52만</td><td align="right" style="color:#999">48만</td><td align="right" style="color:#16a34a">+8%</td></tr>
+<tr style="line-height:2.4"><td style="color:#333;font-weight:500">사용</td><td align="right">12.8만</td><td align="right" style="color:#999">9.2만</td><td align="right" style="color:#16a34a">+39%</td></tr>
 <tr style="line-height:2.4;background:#fafafa"><td colspan="4" style="color:#aaa;font-size:9px;font-weight:600;letter-spacing:.5px;padding-top:4px">마켓플레이스</td></tr>
 <tr style="line-height:2.4"><td style="color:#333;font-weight:500">등록 선박</td><td align="right">202</td><td align="right" style="color:#999">202</td><td align="right" style="color:#999">—</td></tr>
 <tr style="line-height:2.4"><td style="color:#333;font-weight:500">활성 비율</td><td align="right">18.8%</td><td align="right" style="color:#999">15.2%</td><td align="right" style="color:#16a34a">+3.6p</td></tr>
@@ -208,56 +144,15 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
 <tr><td style="padding:20px 32px;border-top:1px solid #f0f0f0"><table width="100%"><tr><td><a href="#" style="font-size:10px;color:#2563EB;text-decoration:none">대시보드 →</a></td><td align="right" style="font-size:9px;color:#ccc">W12 · AboutFishing</td></tr></table></td></tr>
 </table></td></tr></table>
 </div>
-
-<div class="right">
-<div class="sec-label">성장 핵심</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>주간 확정 GMV</td><td>SUM(amount) WHERE status = 'confirmed' AND 해당주</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>자사몰 매출</td><td>샵바이 주문 합산 (해당주)</td><td><span class="src src-api">API</span>샵바이</td></tr>
-<tr><td>Net Revenue</td><td>자사몰 매출 + 확정 GMV × 3%</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>WoW 성장률</td><td>(당주 - 전주) ÷ 전주 × 100</td><td><span class="src src-calc">계산</span></td></tr>
-</table>
-
-<div class="sec-label">예약 (주간 추가)</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>확정건수</td><td>COUNT(confirmed) 해당주</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>전환율</td><td>확정 GMV ÷ 신청 GMV × 100</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>평균 응답</td><td>AVG(confirmed_at - created_at) 해당주</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>취소</td><td>GROUP BY cancel_type 해당주</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>건당 결제액</td><td>확정 GMV ÷ 확정건수</td><td><span class="src src-calc">계산</span></td></tr>
-</table>
-
-<div class="sec-label">커머스 (주간 추가)</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>AOV</td><td>자사몰 매출 ÷ 주문건수</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>ARPPU</td><td>자사몰 매출 ÷ 고유결제자수</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>구매 빈도</td><td>주문건수 ÷ 구매자 수</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>머니 사용</td><td>SUM(money_used) 해당주</td><td><span class="src src-db">DB</span>결제</td></tr>
-</table>
-
-<div class="sec-label">마켓플레이스</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>등록 선박</td><td>COUNT(*) WHERE status = 'active'</td><td><span class="src src-db">DB</span>선박</td></tr>
-<tr><td>활성 비율</td><td>주간 1건+ 예약 선박 ÷ 전체 × 100</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>인기 어종</td><td>GROUP BY fish_type ORDER BY COUNT DESC LIMIT 5</td><td><span class="src src-db">DB</span>예약</td></tr>
-</table>
-
-<div class="sec-label">사용자</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>가입</td><td>COUNT(*) WHERE 해당주 created_at (AOS/iOS 분리)</td><td><span class="src src-db">DB</span>회원</td></tr>
-<tr><td>탈퇴</td><td>COUNT(*) WHERE 해당주 deleted_at (기존/당일 분리)</td><td><span class="src src-db">DB</span>회원</td></tr>
-<tr><td>순증감</td><td>가입 - 탈퇴</td><td><span class="src src-calc">계산</span></td></tr>
-</table>
-</div>
+<div class="right" id="spec-weekly"></div>
 </div></div>
 
-<!-- ════════ MONTHLY ════════ -->
+<!-- ════ MONTHLY ════ -->
 <div class="view" id="v2"><div class="wrap">
 <div class="left">
 <table width="100%" cellpadding="0" cellspacing="0" style="padding:0 0 24px"><tr><td>
 <table width="100%" cellpadding="0" cellspacing="0" style="background:#fff">
 <tr><td style="padding:32px 32px 24px"><table width="100%"><tr><td style="font-size:11px;font-weight:600;color:#111">AboutFishing<span style="color:#ccc;font-weight:400"> · Monthly</span></td><td align="right" style="font-size:11px;color:#aaa">2026년 2월</td></tr></table><div style="border-bottom:1px solid #eee;margin-top:12px"></div></td></tr>
-
 <tr><td style="padding:0 32px"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">IR 핵심</span></td></tr>
 <tr><td style="padding:10px 32px 4px"><table width="100%"><tr>
 <td width="33%" valign="top"><span style="font-size:9px;color:#aaa">MAU</span><br><span style="font-size:22px;font-weight:700;color:#111;letter-spacing:-1px">28,662</span><br><span style="font-size:10px;color:#dc2626">↓ 3.2%</span></td>
@@ -271,7 +166,7 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
 </tr></table></td></tr>
 <tr><td style="padding:0 32px"><div style="border-bottom:1px solid #f0f0f0"></div></td></tr>
 
-<tr><td style="padding:16px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">전체 지표</span></td></tr>
+<tr><td style="padding:16px 32px 0"><span style="font-size:10px;font-weight:600;color:#aaa;letter-spacing:1px">전체 지표 (MoM)</span></td></tr>
 <tr><td style="padding:8px 32px 6px"><table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px">
 <tr style="line-height:2.4"><td style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0"></td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">2월</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">1월</td><td align="right" style="color:#999;font-size:9px;border-bottom:1px solid #f0f0f0">MoM</td></tr>
 <tr style="line-height:2.4;background:#fafafa"><td colspan="4" style="color:#aaa;font-size:9px;font-weight:600;letter-spacing:.5px;padding-top:4px">매출 · GMV</td></tr>
@@ -279,6 +174,10 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
 <tr style="line-height:2.4"><td style="color:#333;font-weight:500">자사몰 매출</td><td align="right">2,821만</td><td align="right" style="color:#999">1,453만</td><td align="right" style="color:#16a34a;font-weight:600">+94%</td></tr>
 <tr style="line-height:2.4"><td style="color:#333;font-weight:500">수수료</td><td align="right">96만</td><td align="right" style="color:#999">54만</td><td align="right" style="color:#16a34a;font-weight:600">+78%</td></tr>
 <tr style="line-height:2.4"><td style="color:#333;font-weight:500">ARPPU</td><td align="right">101,668원</td><td align="right" style="color:#999">88,223원</td><td align="right" style="color:#16a34a">+15%</td></tr>
+<tr style="line-height:2.4;background:#fafafa"><td colspan="4" style="color:#aaa;font-size:9px;font-weight:600;letter-spacing:.5px;padding-top:4px">머니</td></tr>
+<tr style="line-height:2.4"><td style="color:#333;font-weight:500">충전 (유료)</td><td align="right">1,280만</td><td align="right" style="color:#999">980만</td><td align="right" style="color:#16a34a;font-weight:600">+31%</td></tr>
+<tr style="line-height:2.4"><td style="color:#333;font-weight:500">충전 (무료)</td><td align="right">210만</td><td align="right" style="color:#999">185만</td><td align="right" style="color:#16a34a">+14%</td></tr>
+<tr style="line-height:2.4"><td style="color:#333;font-weight:500">사용</td><td align="right">52.7만</td><td align="right" style="color:#999">38.4만</td><td align="right" style="color:#16a34a">+37%</td></tr>
 <tr style="line-height:2.4;background:#fafafa"><td colspan="4" style="color:#aaa;font-size:9px;font-weight:600;letter-spacing:.5px;padding-top:4px">리텐션</td></tr>
 <tr style="line-height:2.4"><td style="color:#333;font-weight:500">D1 / D7 / D30</td><td align="right">34 / 20 / 13%</td><td align="right" style="color:#999">32 / 18 / 11%</td><td align="right" style="color:#16a34a">개선</td></tr>
 <tr style="line-height:2.4"><td style="color:#333;font-weight:500">재구매율</td><td align="right">28.6%</td><td align="right" style="color:#999">24.2%</td><td align="right" style="color:#16a34a">+4.4p</td></tr>
@@ -295,60 +194,186 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
 <tr><td style="padding:20px 32px;border-top:1px solid #f0f0f0"><table width="100%"><tr><td><a href="#" style="font-size:10px;color:#2563EB;text-decoration:none">대시보드 →</a></td><td align="right" style="font-size:9px;color:#ccc">2월 리포트 · AboutFishing</td></tr></table></td></tr>
 </table></td></tr></table>
 </div>
-
-<div class="right">
-<div class="sec-label">IR 핵심</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>MAU</td><td>DISTINCT(user_id) WHERE 해당월 로그인 이력 존재</td><td><span class="src src-db">DB</span>로그인</td></tr>
-<tr><td>GMV (월간)</td><td>SUM(amount) WHERE status = 'confirmed' AND 해당월</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>Net Revenue</td><td>자사몰 매출 + 확정 GMV × 3%</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>Take Rate</td><td>Net Revenue ÷ (GMV + 자사몰 매출) × 100</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>LTV</td><td>ARPU × 평균 이용 개월 (코호트 기반)</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>CAC</td><td>총 마케팅비 ÷ 신규가입 (마케팅비 수동)</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>LTV / CAC</td><td>LTV ÷ CAC</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>Stickiness</td><td>DAU 월평균 ÷ MAU × 100</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>MoM 성장률</td><td>(당월 - 전월) ÷ 전월 × 100</td><td><span class="src src-calc">계산</span></td></tr>
-</table>
-
-<div class="sec-label">매출 · GMV</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>확정 GMV</td><td>SUM(amount) WHERE status = 'confirmed' AND 해당월</td><td><span class="src src-db">DB</span>예약</td></tr>
-<tr><td>자사몰 매출</td><td>샵바이 API 월간 합산 (+VAT)</td><td><span class="src src-api">API</span>샵바이</td></tr>
-<tr><td>수수료</td><td>확정 GMV × 3%</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>ARPU</td><td>Net Revenue ÷ MAU</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>ARPPU</td><td>자사몰 매출 ÷ DISTINCT(결제자)</td><td><span class="src src-api">API</span>샵바이</td></tr>
-</table>
-
-<div class="sec-label">리텐션</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>D1 / D7 / D30</td><td>Dn 로그인 유저 ÷ Day0 가입 × 100 (가입월 코호트)</td><td><span class="src src-db">DB</span>로그인+회원</td></tr>
-<tr><td>재구매율</td><td>31일 내 2회+ 구매자 ÷ 전체 구매자 × 100</td><td><span class="src src-api">API</span>샵바이</td></tr>
-<tr><td>GMV Retention</td><td>전월 예약자의 당월 GMV ÷ 전월 GMV × 100</td><td><span class="src src-db">DB</span>예약</td></tr>
-</table>
-
-<div class="sec-label">사용자 · 탈퇴</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>가입</td><td>COUNT(*) WHERE 해당월 created_at</td><td><span class="src src-db">DB</span>회원</td></tr>
-<tr><td>탈퇴</td><td>COUNT(*) WHERE 해당월 deleted_at</td><td><span class="src src-db">DB</span>회원</td></tr>
-<tr><td>당일탈퇴율</td><td>DATE(created_at) = DATE(deleted_at) 건수 ÷ 총탈퇴 × 100</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>탈퇴 사유 TOP</td><td>GROUP BY reason ORDER BY COUNT DESC LIMIT 5</td><td><span class="src src-db">DB</span>회원</td></tr>
-<tr><td>유지기간별</td><td>CASE(0일 / 1~7 / 8~30 / 31~90 / 91~365 / 1년+)</td><td><span class="src src-db">DB</span>회원</td></tr>
-</table>
-
-<div class="sec-label">Supply</div>
-<table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>등록 선박</td><td>COUNT(*) WHERE status = 'active'</td><td><span class="src src-db">DB</span>선박</td></tr>
-<tr><td>선박 가동률</td><td>월간 1건+ 예약 선박 ÷ 전체 × 100</td><td><span class="src src-calc">계산</span></td></tr>
-<tr><td>Demand Density</td><td>월간 예약건수 ÷ 등록선박수</td><td><span class="src src-calc">계산</span></td></tr>
-</table>
-</div>
+<div class="right" id="spec-monthly"></div>
 </div></div>
 
 <script>
-function sw(n){
-  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('on',i===n));
-  document.querySelectorAll('.view').forEach((v,i)=>v.classList.toggle('on',i===n));
-  
+/* ── Spec Data ── */
+const SPECS = {
+daily: [
+  {label:'이상징후 ALERT', rows:[
+    ['전환율 급락','확정GMV ÷ 신청GMV < 40%','db','예약'],
+    ['미확정 과다','24시간+ 미확정 5건 이상','db','예약'],
+    ['탈퇴 급증','전일 탈퇴 > 7일 평균 × 2','db','회원'],
+    ['당일탈퇴 > 가입','당일탈퇴수 > 가입수','db','회원'],
+    ['자사몰 매출 0','전일 결제 합산 = 0원','api','샵바이'],
+    ['반복 취소 선박','7일 내 동일 선박 3건+ 취소','db','예약'],
+  ]},
+  {label:'예약', rows:[
+    ['확정 GMV','SUM(amount) WHERE status=confirmed AND 전일','db','예약'],
+    ['확정건수','COUNT(*) WHERE status=confirmed AND 전일','db','예약'],
+    ['신청건수','COUNT(*) WHERE 전일 (applied+confirmed+cancelled)','db','예약'],
+    ['전환율','확정 GMV ÷ 신청 GMV × 100','calc',''],
+    ['미확정 대기','COUNT(*) WHERE status=applied (잔존)','db','예약'],
+    ['취소 (업체/고객)','GROUP BY cancel_type','db','예약'],
+    ['건당 결제액','확정 GMV ÷ 확정건수','calc',''],
+    ['평균 응답시간','AVG(confirmed_at - created_at)','db','예약'],
+    ['수수료 수익','확정 GMV × 3%','calc',''],
+    ['당월 누적 GMV','SUM(당월 confirmed amount)','db','예약'],
+  ]},
+  {label:'커머스', rows:[
+    ['자사몰 매출','GET /orders?status=paid → SUM(total_price)','api','샵바이'],
+    ['주문건수','GET /orders?status=paid → COUNT','api','샵바이'],
+    ['AOV','자사몰 매출 ÷ 주문건수','calc',''],
+    ['구매자 수','DISTINCT(buyer_id) WHERE 전일 결제','api','샵바이'],
+    ['당주 누적','SUM(매출) 해당주 월~전일','api','샵바이'],
+    ['당월 누적','SUM(매출) 당월 1일~전일','api','샵바이'],
+  ]},
+  {label:'머니', rows:[
+    ['충전 (유료)','SUM(amount) WHERE type=paid AND 전일','db','결제'],
+    ['충전 (무료)','SUM(amount) WHERE type=free AND 전일','db','결제'],
+    ['사용','SUM(money_used) WHERE 전일','db','결제'],
+  ]},
+  {label:'사용자', rows:[
+    ['가입 (AOS/iOS)','COUNT(*) WHERE created_at=전일 GROUP BY platform','db','회원'],
+    ['탈퇴 (기존/당일)','COUNT(*) WHERE deleted_at=전일 · 당일=created=deleted','db','회원'],
+    ['순증감','가입 - 탈퇴','calc',''],
+    ['당일탈퇴율','당일탈퇴 ÷ 전일가입 × 100','calc',''],
+    ['누적 회원','COUNT(*) WHERE deleted_at IS NULL','db','회원'],
+    ['설치 가입률','가입완료 ÷ first_open (플랫폼별)','db','회원+앱로그'],
+  ]},
+  {label:'커뮤니티', rows:[
+    ['조회수','커뮤니티 탭 PV (전일)','db','체류시간 시트'],
+    ['활성사용자','커뮤니티 탭 참여 유저 수','db','체류시간 시트'],
+    ['체류시간','AVG(session_duration) 전일','db','체류시간 시트'],
+    ['게시글','COUNT(*) type IN (기록,자유글) AND 전일','db','게시글'],
+  ]},
+  {label:'포인트맵', rows:[
+    ['지도 조회','map.aboutfishing.kr 페이지뷰 (전일)','ga','포인트맵 GA4'],
+    ['포인트 상세','포인트 상세 페이지 진입 수','ga','포인트맵 GA4'],
+    ['상세 전환율','포인트 상세 ÷ 지도 조회 × 100','calc','GA4 기반'],
+  ]},
+  {label:'SUPPLY', rows:[
+    ['등록 선박','COUNT(*) WHERE status=active','db','선박'],
+    ['전일 신규 등록','COUNT(*) WHERE created_at=전일','db','선박'],
+  ]},
+],
+weekly: [
+  {label:'성장 핵심', rows:[
+    ['주간 확정 GMV','SUM(confirmed amount) 해당주','db','예약'],
+    ['자사몰 매출','샵바이 주간 합산 (+VAT)','api','샵바이'],
+    ['Net Revenue','자사몰 매출 + 확정 GMV × 3%','calc',''],
+    ['WoW 성장률','(당주 - 전주) ÷ 전주 × 100','calc',''],
+  ]},
+  {label:'예약', rows:[
+    ['확정건수','COUNT(confirmed) 해당주','db','예약'],
+    ['전환율','확정 GMV ÷ 신청 GMV × 100','calc',''],
+    ['평균 응답','AVG(confirmed_at - created_at) 해당주','db','예약'],
+    ['취소 (업체/고객)','GROUP BY cancel_type 해당주','db','예약'],
+  ]},
+  {label:'커머스', rows:[
+    ['주문건수','샵바이 주간 COUNT','api','샵바이'],
+    ['AOV','자사몰 매출 ÷ 주문건수','calc',''],
+    ['ARPPU','자사몰 매출 ÷ 고유결제자수','calc',''],
+  ]},
+  {label:'머니', rows:[
+    ['충전 (유료)','SUM(amount) WHERE type=paid AND 해당주','db','결제'],
+    ['충전 (무료)','SUM(amount) WHERE type=free AND 해당주','db','결제'],
+    ['사용','SUM(money_used) 해당주','db','결제'],
+  ]},
+  {label:'마켓플레이스', rows:[
+    ['등록 선박','COUNT(*) WHERE status=active','db','선박'],
+    ['활성 비율','주간 1건+ 예약 선박 ÷ 전체 × 100','calc',''],
+    ['인기 어종','GROUP BY fish_type ORDER BY COUNT DESC LIMIT 5','db','예약'],
+  ]},
+  {label:'사용자', rows:[
+    ['가입','COUNT(*) 해당주 created_at (AOS/iOS)','db','회원'],
+    ['탈퇴','COUNT(*) 해당주 deleted_at (기존/당일)','db','회원'],
+    ['순증감','가입 - 탈퇴','calc',''],
+  ]},
+],
+monthly: [
+  {label:'IR 핵심', rows:[
+    ['MAU','DISTINCT(user_id) WHERE 해당월 로그인','db','로그인'],
+    ['GMV','SUM(confirmed amount) 해당월','db','예약'],
+    ['Net Revenue','자사몰 매출 + GMV × 3%','calc',''],
+    ['Take Rate','Net Revenue ÷ (GMV + 자사몰매출) × 100','calc',''],
+    ['LTV','ARPU × 평균 이용 개월 (코호트)','calc',''],
+    ['CAC','마케팅비 ÷ 신규가입 (마케팅비 수동)','calc',''],
+    ['LTV / CAC','LTV ÷ CAC','calc',''],
+    ['Stickiness','DAU 월평균 ÷ MAU × 100','calc',''],
+    ['MoM 성장률','(당월 - 전월) ÷ 전월 × 100','calc',''],
+  ]},
+  {label:'매출 · GMV', rows:[
+    ['확정 GMV','SUM(confirmed amount) 해당월','db','예약'],
+    ['자사몰 매출','샵바이 API 월간 합산 (+VAT)','api','샵바이'],
+    ['수수료','확정 GMV × 3%','calc',''],
+    ['ARPU','Net Revenue ÷ MAU','calc',''],
+    ['ARPPU','자사몰 매출 ÷ DISTINCT(결제자)','api','샵바이'],
+  ]},
+  {label:'머니', rows:[
+    ['충전 (유료)','SUM(amount) WHERE type=paid AND 해당월','db','결제'],
+    ['충전 (무료)','SUM(amount) WHERE type=free AND 해당월','db','결제'],
+    ['사용','SUM(money_used) 해당월','db','결제'],
+    ['사용률','사용액 ÷ 매출 × 100','calc',''],
+  ]},
+  {label:'리텐션', rows:[
+    ['D1 / D7 / D30','Dn 로그인 ÷ Day0 가입 × 100','db','로그인+회원'],
+    ['재구매율','31일 내 2회+ 구매 ÷ 전체구매자 × 100','api','샵바이'],
+    ['GMV Retention','전월 예약자 당월GMV ÷ 전월GMV × 100','db','예약'],
+  ]},
+  {label:'사용자 · 탈퇴', rows:[
+    ['가입','COUNT(*) 해당월 created_at','db','회원'],
+    ['탈퇴','COUNT(*) 해당월 deleted_at','db','회원'],
+    ['당일탈퇴율','DATE(created)=DATE(deleted) ÷ 총탈퇴 × 100','calc',''],
+    ['탈퇴 사유 TOP','GROUP BY reason ORDER BY COUNT DESC LIMIT 5','db','회원'],
+    ['유지기간별','CASE(0일/1~7/8~30/31~90/91~365/1년+)','db','회원'],
+  ]},
+  {label:'Supply', rows:[
+    ['등록 선박','COUNT(*) WHERE status=active','db','선박'],
+    ['선박 가동률','월간 1건+ 예약 ÷ 전체 × 100','calc',''],
+    ['Demand Density','예약건수 ÷ 선박수','calc',''],
+  ]},
+],
+};
+
+const srcTag = {db:'<span class="src src-db">DB</span>',api:'<span class="src src-api">API</span>',calc:'<span class="src src-calc">계산</span>',ga:'<span class="src src-ga">GA</span>'};
+
+/* ── Checkbox state (localStorage) ── */
+function getState(){try{return JSON.parse(localStorage.getItem('af_spec_chk')||'{}')}catch(e){return{}}}
+function saveState(s){localStorage.setItem('af_spec_chk',JSON.stringify(s))}
+function toggle(key){var s=getState();s[key]=s[key]==='Y'?'N':s[key]==='N'?'':s[key]===''?'Y':'Y';saveState(s);renderSpecs();}
+
+function renderSpecs(){
+  var state=getState();
+  ['daily','weekly','monthly'].forEach(function(period){
+    var el=document.getElementById('spec-'+period);
+    var html='';
+    SPECS[period].forEach(function(sec){
+      html+='<div class="sec-label">'+sec.label+'</div>';
+      html+='<table class="spec"><colgroup><col class="c-name"><col class="c-formula"><col class="c-src"><col class="c-chk"></colgroup>';
+      html+='<tr><th>지표</th><th>산식</th><th>소스</th><th style="text-align:center">구현</th></tr>';
+      sec.rows.forEach(function(r){
+        var key=period+'_'+sec.label+'_'+r[0];
+        var val=state[key]||'';
+        var cls=val==='Y'?'color:#2563EB':val==='N'?'color:#dc2626':'color:#ccc';
+        var label=val==='Y'?'가능':val==='N'?'불가':'—';
+        html+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+srcTag[r[2]]+(r[3]||'')+'</td>';
+        html+='<td style="text-align:center;cursor:pointer;'+cls+';font-size:11px;font-weight:600" onclick="toggle(\''+key+'\')">'+ label+'</td></tr>';
+      });
+      html+='</table>';
+    });
+    el.innerHTML=html;
+  });
 }
+
+function sw(n){
+  var sy=window.scrollY;
+  document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('on',i===n)});
+  document.querySelectorAll('.view').forEach(function(v,i){v.classList.toggle('on',i===n)});
+  requestAnimationFrame(function(){window.scrollTo(0,sy)});
+}
+
+renderSpecs();
 </script>
 </body></html>
