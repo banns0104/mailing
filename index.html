@@ -13,13 +13,13 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
 .view.on{display:block;margin-top:16px}
 
 /* Spec table */
-.sec-label{font-size:10px;font-weight:600;color:#1B3A5C;letter-spacing:1px;padding:16px 0 8px;border-bottom:2px solid #1B3A5C;margin-bottom:0}
-.spec{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:16px}
-.spec th{padding:6px 8px;text-align:left;font-size:9px;color:#999;font-weight:500;border-bottom:1px solid #e5e5e5;white-space:nowrap}
-.spec td{padding:6px 8px;border-bottom:1px solid #f0f0f0;vertical-align:top;line-height:1.5}
-.spec td:first-child{font-weight:600;color:#111;white-space:nowrap;width:110px}
-.spec td:nth-child(2){color:#555;font-size:10px}
-.src{display:inline-block;padding:1px 5px;border-radius:3px;font-size:8px;font-weight:600;margin-right:2px}
+.sec-label{font-size:12px;font-weight:600;color:#1B3A5C;letter-spacing:1px;padding:18px 0 10px;border-bottom:2px solid #1B3A5C;margin-bottom:0}
+.spec{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px}
+.spec th{padding:8px 10px;text-align:left;font-size:11px;color:#999;font-weight:500;border-bottom:1px solid #e5e5e5;white-space:nowrap}
+.spec td{padding:8px 10px;border-bottom:1px solid #f0f0f0;vertical-align:top;line-height:1.6}
+.spec td:first-child{font-weight:600;color:#111;white-space:nowrap;width:120px}
+.spec td:nth-child(2){color:#555;font-size:12px}
+.src{display:inline-block;padding:2px 6px;border-radius:3px;font-size:9px;font-weight:600;margin-right:3px}
 .src-db{background:#FFF3E0;color:#E65100}
 .src-api{background:#E8F5E9;color:#2E7D32}
 .src-calc{background:#EFF6FF;color:#2563EB}
@@ -156,9 +156,9 @@ body{background:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Apple SD G
 
 <div class="sec-label">포인트맵</div>
 <table class="spec"><tr><th>지표</th><th>산식</th><th>소스</th></tr>
-<tr><td>지도 조회</td><td>COUNT(*) WHERE event = 'map_view' AND 전일</td><td><span class="src src-log">로그</span>앱로그DB</td></tr>
-<tr><td>포인트 상세</td><td>COUNT(*) WHERE event = 'point_detail' AND 전일</td><td><span class="src src-log">로그</span>앱로그DB</td></tr>
-<tr><td>상세 전환율</td><td>포인트 상세 ÷ 지도 조회 × 100</td><td><span class="src src-calc">계산</span></td></tr>
+<tr><td>지도 조회</td><td>map.aboutfishing.kr 페이지뷰 (전일)</td><td><span class="src src-api">GA</span>포인트맵 GA4</td></tr>
+<tr><td>포인트 상세</td><td>포인트 상세 페이지 진입 수 (전일)</td><td><span class="src src-api">GA</span>포인트맵 GA4</td></tr>
+<tr><td>상세 전환율</td><td>포인트 상세 ÷ 지도 조회 × 100</td><td><span class="src src-calc">계산</span>GA4 기반</td></tr>
 </table>
 
 <div class="sec-label">SUPPLY</div>
